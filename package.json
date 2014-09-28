@@ -1,0 +1,23 @@
+{
+  "name": "shoelace-ui-col",
+  "version": "0.1.0",
+  "description": "Grid helpers",
+  "repository": "https://github.com/shoelace-ui/col.git",
+  "keywords": [
+    "shoelace",
+    "media",
+    "queries"
+  ],
+  "author": "Michael Andrew Vanasse <mail@mndvns.com>",
+  "devDependencies": {
+    "serve": "^1.4.0",
+    "should": "^4.0.4",
+    "stylus": "^0.49.1",
+    "mocha": "^1.21.4"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "shoelace-ui-screen": "^0.1.0",
+    "shoelace-ui-media-queries": "^0.1.2"
+  }
+}

@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    style
+      :stylus
+        @require 'main.styl'
+
+  body
+    ul
+      li.above-keyword screen-size-above('tablet')
+      li.above-size screen-size-above(500px)
+
+      li.below-keyword screen-size-below('large-desktop')
+      li.below-size screen-size-below(1000px)
+
+      li.between-size-size screen-size-between(500px, 1000px)
+      li.between-keyword-keyword screen-size-between('tablet', 'laptop')
+      li.between-keyword-size screen-size-between('tablet', 1500px)
+      li.between-size-keyword screen-size-between(500px, 'laptop')
+
+      li.palm screen-size('palm')
+      li.phone screen-size('phone')
+      li.tablet screen-size('tablet')
+      li.laptop screen-size('laptop')
+      li.desktop screen-size('desktop')
+      li.large-desktop screen-size('large-desktop')
+
+      li.orientation-portrait screen-orientation('portrait')
+      li.orientation-landscape screen-orientation('landscape')
+
+      li.high-DPI screen-high-DPI()

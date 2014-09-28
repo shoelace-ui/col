@@ -1,0 +1,38 @@
+/**
+ * Module dependencies
+ */
+
+@require './variables'
+@require 'shoelace-ui-media-queries'
+
+/**
+ * Divde `n` by `d`
+ * @return {Percentage}
+ */
+
+col--width(n, d)
+  return unit(((n / d) * 100), '%')
+
+/**
+ * Assign corrent width and take optional device name(s)
+ * as media queries.
+ * @param {Number} _numer
+ * @param {Number} _denom
+ * @param {Ident} _device
+ */
+
+col(_numer, _denom = col--ceiling, _device...)
+  if type(_denom) != 'unit'
+    _device = _denom
+    _denom = col--ceiling
+
+  // TODO
+  // better docs
+  _width = col--width(_numer, _denom)
+  _range = col--ranges['' + _device]
+  +cache('w' + _width + _device)
+    if type(_device) != 'null'
+      +screen-size-between(_range[0], _range[1])
+        width _width
+    else
+      width _width

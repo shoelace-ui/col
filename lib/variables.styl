@@ -1,0 +1,35 @@
+/**
+ * Module dependencies
+ */
+
+@require 'shoelace-ui-screen'
+
+/**
+ * Define the ceiling for col ranges
+ */
+
+col--ceiling ?= 12
+
+/**
+ * Now we map all of the devices as ranges
+ * like `{device1}-{device2}`
+ */
+
+_single = {}
+_joint = {}
+_buf = {}
+
+for _k, _kv in screen--devices
+
+  _single[_k] = _kv
+
+  for _s, _sv in _single
+    if _s != _k
+      _joint[_s + '-' + _k] = (_sv[0] screen--sizes[_k][1])
+
+for _s, _sv in _single
+  _buf[_s] = _sv
+for _j, _jv in _joint
+  _buf[_j] = _jv
+
+col--ranges ?= _buf
